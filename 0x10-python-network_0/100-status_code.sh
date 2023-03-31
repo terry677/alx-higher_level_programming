@@ -1,3 +1,3 @@
 #!/bin/bash
-# gets content-length of a web page
-curl -I -s $1 | grep HTTP1/1 | cut -d ' ' -f 2
+# sends a request to a URL passed as an argument, and displays only the status code of the response
+curl -so /dev/null --write-out "%{http_code}" "$1"
